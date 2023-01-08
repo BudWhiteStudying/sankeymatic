@@ -501,7 +501,7 @@ d3.sankey = () => {
       const weight = d3.sum(nodeList, (n) => yCenter(n) * n.value),
         value = valueSum(nodeList);
       return {
-        stage: nodeList[0].stage,
+        stage: nodeList && nodeList[0] ? nodeList[0].stage : '',
         weight: weight,
         value: value,
         center: weight / value,
